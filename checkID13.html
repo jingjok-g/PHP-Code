@@ -1,0 +1,30 @@
+<!-- เช็คการกรอกเลขบัตรปชช และ disabled ปุ๋ม submit-->
+<script language="javascript">
+    function checkID(id) {
+        if (id.length != 13) return false;
+        for (i = 0, sum = 0; i < 12; i++)
+            sum += parseFloat(id.charAt(i)) * (13 - i);
+        if ((11 - sum % 11) % 10 != parseFloat(id.charAt(12)))
+            return false;
+        return true;
+    }
+
+    function checkForm() {
+        if (!checkID(document.frmAdd.id13.value)) {
+            document.getElementById("Button").disabled = true;
+            document.getElementById("error13").hidden = false;
+            document.getElementById("error13").innerHTML = "เลขบัตรประชาชนไม่ถูกต้อง";
+        } else {
+            document.getElementById("Button").disabled = false;
+            document.getElementById("error13").hidden = true;
+        }
+    }
+</script>
+
+<form action="#" name="frmAdd" method="POST" onSubmit="return checkForm(this)"></form>
+<input type="number" class="form-control" id="recipient-name" name="id13" placeholder="เลขประจำตัวประชาชน"
+    pattern="(0-9){13}" onKeyPress="if(this.value.length==13) return false;" autocomplete="off" required
+    onchange=" checkForm()">
+<p id="error13"></p>
+<button id="Button" disabled type="submit">ตกลง</button>
+</form>
