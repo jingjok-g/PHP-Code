@@ -1,0 +1,17 @@
+mysql_ ทั้งหมดเลย เป็น mysqli_
+เช่น
+mysql_connect เป็น mysqli_connect
+mysql_query( เป็น mysqli_query($conn,
+
+each ยกเลิก ใช้แบบนี้แทน
+เก่า while (list($key, $value) = each($array)) {
+ใหม่ foreach($array as $key => $value) {
+
+ereg ยกเลิก ใช้ preg_match
+เก่า ereg("ไทย", $objResult['value21'])
+ใหม่ preg_match("/ไทย/", $objResult['value21'])
+
+
+
+https://www.thanop.com/php7-upgrade/
+https://stackoverflow.com/questions/46492621/how-can-i-update-code-that-uses-the-deprecated-each-function
