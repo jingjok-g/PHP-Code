@@ -28,3 +28,16 @@ foreach ($array as $value) {
 // Array Index [2] : 8
 // Array Index [3] : 9
 // Array Index [4] : 10
+
+// ตัวอย่าง datalist ชื่อ list ระวังจะซ้ำระบบจะไม่ทำงาน
+?>
+<input name="value31" list="value31s" class="form-control" type="text" id="value31" value="<?= $value31; ?>">
+<datalist id="value31s">
+    <?php
+    $sql = "SELECT DISTINCT value31 FROM `profile`";
+    $query = mysqli_query($conn, $sql);
+    foreach ($query as $row31) :
+        echo "<option value={$row31["value31"]}>";
+    endforeach;
+    ?>
+</datalist>
