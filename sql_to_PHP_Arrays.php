@@ -13,6 +13,8 @@ array(9) { [69]=> string(24) "โปลีเทรด" [70]=> string(51) "ห�
 // https://stackoverflow.com/questions/17056349/convert-sql-results-into-php-array
 // https://stackoverflow.com/questions/35357092/how-to-create-associative-array-from-sql-table
 
+---
+
 เช็คข้อมูลใน array ว่ามีข้อมูลไหม array_keys(array, value, strict)
 $a=array(10,20,30,"10");
 print_r(array_keys($a,"10",false)); //false ตรวจเจอทั้ง 10 และ "10"  ถ้าเป็น true เจอแต่ "10"
