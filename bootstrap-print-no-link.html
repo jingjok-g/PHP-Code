@@ -1,0 +1,16 @@
+bootstrap ปริ้น ติดลิ้งค์
+bootstrap print link
+
+<style>
+		.pp2 {
+			text-indent: 50px;
+			text-align: justify;
+		}
+
+		/* Don't print link hrefs */
+		@media print {
+			a[href]:after {
+				content: none
+			}
+		}
+	</style>
