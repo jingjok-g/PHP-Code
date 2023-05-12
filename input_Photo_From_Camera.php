@@ -29,7 +29,7 @@
             display: none;
         }
 
-        #dataurl-container {
+        #dataurl_container {
             display: none;
         }
 
@@ -38,7 +38,7 @@
             margin: 0 auto 20px auto;
         }
 
-        #dataurl-header {
+        #dataurl_header {
             text-align: center;
             font-size: 15px;
         }
@@ -59,14 +59,14 @@
 </head>
 
 <body>
-
+<!-- new -->
     <button id="start_camera">Start Camera</button>
     <video id="video" width="320" height="240" autoplay></video>
     <button id="click_photo">Click Photo</button>
-    <div id="dataurl-container">
+    <div id="dataurl_container">
         <form method="post">
             <canvas id="canvas" width="320" height="240"></canvas>
-            <div id="dataurl-header">Image Data URL</div>
+            <div id="dataurl_header">Image Data URL</div>
             <textarea id="dataurl" name="data_url" readonly></textarea>
             <center><input id="savephoto" type="submit" value="save img"></center>
         </form>
@@ -78,7 +78,7 @@
         let click_button = document.querySelector("#click_photo");
         let canvas = document.querySelector("#canvas");
         let dataurl = document.querySelector("#dataurl");
-        let dataurl_container = document.querySelector("#dataurl-container");
+        let dataurl_container = document.querySelector("#dataurl_container");
 
         camera_button.addEventListener('click', async function() {
             let stream = null;
@@ -133,6 +133,7 @@
         exit();
     }
     ?>
+    <!-- new -->
 </body>
 
 </html>
