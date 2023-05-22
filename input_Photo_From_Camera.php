@@ -5,6 +5,7 @@
     <title>ถ่ายรูปจากกล้องหน้าเก็บลงเครื่อง</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
     <style type="text/css">
         button {
             width: 120px;
@@ -59,7 +60,45 @@
 </head>
 
 <body>
-<!-- new -->
+    <?php
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    if (strpos($user_agent, 'iPhone') !== false) {
+        echo "ผู้ใช้กำลังใช้งานผ่านอุปกรณ์ iPhone";
+    } elseif (strpos($user_agent, 'Android') !== false) {
+        echo "ผู้ใช้กำลังใช้งานผ่านอุปกรณ์แอนดรอยด์ (Android)";
+    } else {
+        echo "ผู้ใช้ไม่ใช้งานผ่านอุปกรณ์ iPhone หรือแอนดรอยด์";
+    }
+    ?>
+    <br>
+    <?php
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
+    if (strpos($userAgent, 'Chrome') !== false) {
+        // ตรวจสอบว่าใช้ Chrome
+        echo "Using Chrome";
+    } elseif (strpos($userAgent, 'Firefox') !== false) {
+        // ตรวจสอบว่าใช้ Firefox
+        echo "Using Firefox";
+    } elseif (strpos($userAgent, 'Safari') !== false) {
+        // ตรวจสอบว่าใช้ Safari
+        echo "Using Safari";
+    } elseif (strpos($userAgent, 'Opera') !== false) {
+        // ตรวจสอบว่าใช้ Opera
+        echo "Using Opera";
+    } elseif (strpos($userAgent, 'Edge') !== false) {
+        // ตรวจสอบว่าใช้ Microsoft Edge
+        echo "Using Microsoft Edge";
+    } elseif (strpos($userAgent, 'Trident') !== false) {
+        // ตรวจสอบว่าใช้ Internet Explorer
+        echo "Using Internet Explorer";
+    } else {
+        // ไม่รู้จักเบราว์เซอร์
+        echo "Unknown browser";
+    }
+    echo "<br>$userAgent";
+    ?>
+    <!-- new -->
     <button id="start_camera">Start Camera</button>
     <video id="video" width="320" height="240" autoplay></video>
     <button id="click_photo">Click Photo</button>
